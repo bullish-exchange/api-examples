@@ -1,1 +1,2 @@
 git+git://github.com/bullish-exchange/python-signer
+websocket-client
