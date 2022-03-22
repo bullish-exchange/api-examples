@@ -46,7 +46,7 @@ def on_open(conn):
         "type": "command",
         "method": "subscribe",
         "params": {
-            "topic": "l1-orderbook",
+            "topic": "l1Orderbook",
             "symbol": "BTCUSD"
         },
         "id": get_id()
