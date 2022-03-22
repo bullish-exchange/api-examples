@@ -46,7 +46,7 @@ def on_open(conn):
         "type": "command",
         "method": "subscribe",
         "params": {
-            "topic": "spot-accounts",
+            "topic": "spotAccounts",
         },
         "id": get_id()
     }
