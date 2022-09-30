@@ -70,8 +70,8 @@ def on_error(conn, message):
     print(f"Received error: {message}")
 
 
-def on_close(conn):
-    print(f"Closed connection to {conn}")
+def on_close(conn, close_status_code, close_msg):
+    print(f"Closed connection to {conn.url}. close_status_code={close_status_code}, close_msg={close_msg}")
 
 
 def open_connection():
