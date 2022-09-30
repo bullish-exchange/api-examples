@@ -1,6 +1,5 @@
 import json
 import os
-import ssl
 import threading
 import time
 
@@ -35,8 +34,8 @@ def on_error(conn, message):
     print(f"Received error: {message}")
 
 
-def on_close(conn):
-    print(f"Closed connection to {conn.uri}")
+def on_close(conn, close_status_code, close_msg):
+    print(f"Closed connection to {conn.url}. close_status_code={close_status_code}, close_msg={close_msg}")
 
 
 def on_open(conn):
@@ -55,7 +54,7 @@ def on_open(conn):
 
 
 def open_connection():
-    ws_conn = websocket.WebSocketApp(HOST_NAME + "/v1/market-data",
+    ws_conn = websocket.WebSocketApp(HOST_NAME + "/trading-api/v1/market-data",
                                      on_open=on_open,
                                      on_message=on_message,
                                      on_error=on_error,
