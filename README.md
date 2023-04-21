@@ -24,6 +24,7 @@ export BX_PUBLIC_KEY=< your credential >
 export BX_PRIVATE_KEY=< your credential >
 export BX_API_METADATA=< your credential >
 export BX_AUTHORIZER=< your credential >
+export BX_TRADING_ACCOUNT_ID=< your credential >
 ````
 
 ## Scripts
