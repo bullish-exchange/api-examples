@@ -15,11 +15,12 @@ pip3 install -r requirements.txt
 ```
 ## Prepare environment variables
 
-Inside the `.env` file, override the default variables with your [JWT token](https://api.exchange.bullish.com/docs/api/rest/#overview--generate-a-jwt-token) 
-and [API key](https://api.exchange.bullish.com/docs/api/rest/#overview--generate-an-api-key):
+Scripts in this repository rely on environment variables.
+
+Those have to be supplied via an `.env` file in the below format. [Here](.env)
+
 ````
 export BX_JWT=< your credential >
-
 export BX_PUBLIC_KEY=< your credential >
 export BX_PRIVATE_KEY=< your credential >
 export BX_API_METADATA=< your credential >
@@ -27,11 +28,13 @@ export BX_AUTHORIZER=< your credential >
 export BX_TRADING_ACCOUNT_ID=< your credential >
 ````
 
-## Scripts
+More info on how to obtain them is available in [this guide](https://api.exchange.bullish.com/docs/api/rest/#overview--how-to-send-authenticated-requests).  
 
-For a full walk-through on the usage of these scripts, start [here](https://api.exchange.bullish.com/docs/api/rest/#overview--how-to-send-authenticated-requests).  
+Specifically,
 
-- Generate a JWT token
-- Create an order
-- Cancel an order
-- Read orders
+- [API key (Public Key, Private Key, API Metadata)](https://api.exchange.bullish.com/docs/api/rest/#overview--generate-an-api-key):
+
+- [Login Tokens (JWT token and Authorizer)](https://api.exchange.bullish.com/docs/api/rest/#overview--generate-a-jwt-token) 
+
+- Trading Account Ids
+

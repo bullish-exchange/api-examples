@@ -8,6 +8,7 @@ import websocket
 
 HOST_NAME = os.getenv("BX_WS_API_HOSTNAME")
 JWT_TOKEN = os.getenv("BX_JWT")
+TRADING_ACCOUNT_ID = os.getenv("BX_TRADING_ACCOUNT_ID")
 COOKIE = f"JWT_COOKIE={JWT_TOKEN}"
 
 
@@ -54,7 +55,8 @@ def on_open(conn):
 
 
 def open_connection():
-    ws_conn = websocket.WebSocketApp(HOST_NAME + "/trading-api/v1/private-data",
+    url = f"{HOST_NAME}/trading-api/v1/private-data?tradingAccountId={TRADING_ACCOUNT_ID}" if TRADING_ACCOUNT_ID is not None else f"{HOST_NAME}/trading-api/v1/private-data"
+    ws_conn = websocket.WebSocketApp(url,
                                      on_open=on_open,
                                      on_message=on_message,
                                      on_error=on_error,
