@@ -17,13 +17,12 @@ Withdrawals consist of 3 basic actions:
 
 Note: after getting your destinationId, the withdrawal process is identical for both fiat and crypto.
 """
-import json
 import os
-from datetime import datetime, timezone
-from hashlib import sha256
-
 import requests
+from dotenv import load_dotenv
 from eosio_signer import EOSIOKey
+
+load_dotenv()
 
 import secrets
 

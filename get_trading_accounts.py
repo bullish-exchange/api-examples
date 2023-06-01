@@ -1,7 +1,9 @@
-import json
 import os
 
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 HOST_NAME = os.getenv("BX_API_HOSTNAME")
