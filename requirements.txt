@@ -1,4 +1,4 @@
 eosio-signer@git+https://github.com/bullish-exchange/python-signer
 websocket-client==1.3.1
 requests==2.25.1
-python-dotenv
+python-dotenv==1.0.0
