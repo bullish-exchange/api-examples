@@ -1,11 +1,12 @@
 import json
 import os
-import ssl
 import threading
 import time
 from collections import deque
-
 import websocket
+from dotenv import load_dotenv
+
+load_dotenv()
 
 WS_HOST_NAME = os.getenv("BX_WS_API_HOSTNAME")
 TRADES = None

@@ -5,6 +5,9 @@ import threading
 import time
 
 import websocket
+from dotenv import load_dotenv
+
+load_dotenv()
 
 HOST_NAME = os.getenv("BX_WS_API_HOSTNAME")
 JWT_TOKEN = os.getenv("BX_JWT")

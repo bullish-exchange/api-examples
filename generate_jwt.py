@@ -3,9 +3,11 @@ import json
 import os
 from datetime import datetime, timezone
 from hashlib import sha256
-
 import requests
 from eosio_signer import EOSIOKey
+from dotenv import load_dotenv
+
+load_dotenv()
 
 HOST_NAME = os.getenv("BX_API_HOSTNAME")
 PUBLIC_KEY = os.getenv("BX_PUBLIC_KEY")

@@ -4,13 +4,11 @@ The examples here demonstrate simple usage of the GET endpoints of Bullish Custo
 This script only makes read only requests and can be safely run in it's entirety. It also assumes you have setup your
 environment variables as descried in README.md including generating a JWT token
 """
-import json
 import os
-from datetime import datetime, timezone
-from hashlib import sha256
-
 import requests
-from eosio_signer import EOSIOKey
+from dotenv import load_dotenv
+
+load_dotenv()
 
 HOST_NAME = os.getenv("BX_API_HOSTNAME")
 PRIVATE_KEY = os.getenv("BX_PRIVATE_KEY")
