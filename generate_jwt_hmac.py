@@ -3,10 +3,11 @@ from datetime import datetime, timezone
 from dotenv import load_dotenv
 from hashlib import sha256
 
+load_dotenv()
 
 HOST_NAME = os.getenv("BX_API_HOSTNAME")
 PUBLIC_KEY = os.getenv("BX_PUBLIC_KEY")
-SECRET_KEY = os.getenv("BX_SECRET_KEY")
+SECRET_KEY = bytes(os.getenv("BX_SECRET_KEY"), 'utf-8')
 
 session = requests.Session()
 nonce = str(1234567890)

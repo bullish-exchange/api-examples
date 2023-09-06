@@ -11,7 +11,10 @@ JWT_TOKEN = os.getenv("BX_JWT")
 AUTHORIZER = os.getenv("BX_AUTHORIZER")
 TRADING_ACCOUNT_ID = os.getenv("BX_TRADING_ACCOUNT_ID")
 
+ORDER_ID = "399014193334321153"
+SYMBOL = "BTCUSD"
 session = requests.Session()
+
 response = session.get(HOST_NAME + "/trading-api/v1/nonce", verify=False)
 nonce = json.loads(response.text)["lowerBound"]
 next_nonce = str(nonce + 1)
@@ -22,18 +25,12 @@ body = {
     "nonce": next_nonce,
     "authorizer": AUTHORIZER,
     "command": {
-        "commandType": "V2CreateOrder",
+        "commandType": "V2CancelOrder",
+        "orderId": ORDER_ID,
         "handle": None,
-        "symbol": "BTCUSD",
-        "type": "LMT",
-        "side": "BUY",
-        "price": "30071.5000",
-        "stopPrice": None,
-        "quantity": "1.87000000",
-        "timeInForce": "GTC",
-        "allowMargin": False,
+        "symbol": SYMBOL,
         "tradingAccountId": TRADING_ACCOUNT_ID,
-    }
+    },
 }
 
 payload = (json.dumps(body, separators=(",", ":"))).encode("utf-8")
@@ -48,7 +45,12 @@ headers = {
     "BX-NONCE": next_nonce,
 }
 
-response = session.post(
-    HOST_NAME + "/trading-api/v1/orders", json=body, headers=headers
+response = session.delete(
+    HOST_NAME
+    + "/trading-api/v1/orders"
+    + f"?orderId={ORDER_ID}"
+    + f"&symbol={SYMBOL}"
+    + f"&tradingAccountId={TRADING_ACCOUNT_ID}",
+    headers=headers,
 )
 print(f"HTTP Status: {response.status_code}, \n{response.text}")

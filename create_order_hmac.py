@@ -6,7 +6,7 @@ from hashlib import sha256
 load_dotenv()
 
 HOST_NAME = os.getenv("BX_API_HOSTNAME")
-SECRET_KEY = os.getenv("BX_SECRET_KEY")
+SECRET_KEY = bytes(os.getenv("BX_SECRET_KEY"), 'utf-8')
 JWT_TOKEN = os.getenv("BX_JWT")
 AUTHORIZER = os.getenv("BX_AUTHORIZER")
 
@@ -36,7 +36,7 @@ body = {
 
 payload = (json.dumps(body, separators=(",", ":"))).encode("utf-8")
 digest = sha256(payload).hexdigest().encode('utf-8')
-order_signature = hmac.new(SECRET_KEY, digest, sha256).hexdigest()
+signature = hmac.new(SECRET_KEY, digest, sha256).hexdigest()
 
 headers = {
     "Content-type": "application/json",

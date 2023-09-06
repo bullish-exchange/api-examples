@@ -9,10 +9,12 @@ HOST_NAME = os.getenv("BX_API_HOSTNAME")
 SECRET_KEY = bytes(os.getenv("BX_SECRET_KEY"), 'utf-8')
 JWT_TOKEN = os.getenv("BX_JWT")
 AUTHORIZER = os.getenv("BX_AUTHORIZER")
-TRADING_ACCOUNT_ID = os.getenv("BX_TRADING_ACCOUNT_ID")
 
+LIQUIDITY_ID = "525143548447162376"
+SYMBOL = "BTCUSD"
 session = requests.Session()
-response = session.get(HOST_NAME + "/trading-api/v1/nonce", verify=False)
+
+response = session.get(HOST_NAME + "/trading-api/v1/nonce")
 nonce = json.loads(response.text)["lowerBound"]
 next_nonce = str(nonce + 1)
 timestamp = str(int(datetime.now(timezone.utc).timestamp() * 1000))
@@ -22,17 +24,9 @@ body = {
     "nonce": next_nonce,
     "authorizer": AUTHORIZER,
     "command": {
-        "commandType": "V2CreateOrder",
-        "handle": None,
-        "symbol": "BTCUSD",
-        "type": "LMT",
-        "side": "BUY",
-        "price": "30071.5000",
-        "stopPrice": None,
-        "quantity": "1.87000000",
-        "timeInForce": "GTC",
-        "allowMargin": False,
-        "tradingAccountId": TRADING_ACCOUNT_ID,
+        "commandType": "V1RemoveLiquidity",
+        "liquidityId": LIQUIDITY_ID,
+        "symbol": SYMBOL
     }
 }
 
@@ -48,7 +42,12 @@ headers = {
     "BX-NONCE": next_nonce,
 }
 
-response = session.post(
-    HOST_NAME + "/trading-api/v1/orders", json=body, headers=headers
+response = session.delete(
+    HOST_NAME
+    + "/trading-api/v1/amm-instructions"
+    + f"?liquidityId={LIQUIDITY_ID}"
+    + f"&symbol={SYMBOL}"
+    + f"?tradingAccountId={TRADING_ACCOUNT_ID}",
+    headers=headers,
 )
 print(f"HTTP Status: {response.status_code}, \n{response.text}")
