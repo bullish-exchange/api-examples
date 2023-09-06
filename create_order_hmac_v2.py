@@ -1,5 +1,5 @@
 import hmac, requests, os, json
-from datetime import datetime
+from datetime import datetime, timezone
 from dotenv import load_dotenv
 from hashlib import sha256
 
