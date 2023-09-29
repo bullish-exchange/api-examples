@@ -87,6 +87,16 @@ def on_open(conn):
         "id": get_id()
     }
     conn.send(json.dumps(subscribe_message))
+    subscribe_message = {
+        "jsonrpc": "2.0",
+        "type": "command",
+        "method": "subscribe",
+        "params": {
+            "topic": "heartbeat"
+        },
+        "id": get_id()
+    }
+    conn.send(json.dumps(subscribe_message))
 
 
 def open_connection():
