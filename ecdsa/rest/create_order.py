@@ -39,27 +39,25 @@ nonce = json.loads(response.text)["lowerBound"]
 next_nonce = str(nonce + 1)
 timestamp = str(int(datetime.now(timezone.utc).timestamp() * 1000))
 
-command = {
-    "commandType": "V1CreateOrder",
-    "handle": None,
-    "symbol": "BTCUSD",
-    "type": "LMT",
-    "side": "BUY",
-    "price": "30071.5000",
-    "stopPrice": None,
-    "quantity": "1.87000000",
-    "timeInForce": "GTC",
-    "allowMargin": False,
-}
-
 body = {
     "timestamp": timestamp,
     "nonce": next_nonce,
     "authorizer": AUTHORIZER,
-    "command": command,
+    "command": {
+        "commandType": "V1CreateOrder",
+        "handle": None,
+        "symbol": "BTCUSD",
+        "type": "LMT",
+        "side": "BUY",
+        "price": "30071.5000",
+        "stopPrice": None,
+        "quantity": "1.87000000",
+        "timeInForce": "GTC",
+        "allowMargin": False,
+    },
 }
 
-payload = (timestamp + next_nonce + "POST" + "/trading-api/v1/orders" + json.dumps(command, separators=(",", ":"))).encode("utf-8")
+payload = (timestamp + next_nonce + "POST" + "/trading-api/v1/orders" + json.dumps(body, separators=(",", ":"))).encode("utf-8")
 signature = private_key.sign(payload, hashfunc=hashlib.sha256, sigencode=sigencode_der)
 signature = base64.b64encode(signature).decode()
 
