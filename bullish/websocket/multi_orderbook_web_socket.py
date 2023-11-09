@@ -9,8 +9,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 HOST_NAME = os.getenv("BX_WS_API_HOSTNAME")
-JWT_TOKEN = os.getenv("BX_JWT")
-COOKIE = f"JWT_COOKIE={JWT_TOKEN}"
 
 
 def get_id():
@@ -87,6 +85,16 @@ def on_open(conn):
         "id": get_id()
     }
     conn.send(json.dumps(subscribe_message))
+    subscribe_message = {
+        "jsonrpc": "2.0",
+        "type": "command",
+        "method": "subscribe",
+        "params": {
+            "topic": "heartbeat"
+        },
+        "id": get_id()
+    }
+    conn.send(json.dumps(subscribe_message))
 
 
 def open_connection():
@@ -94,8 +102,7 @@ def open_connection():
                                      on_open=on_open,
                                      on_message=on_message,
                                      on_error=on_error,
-                                     on_close=on_close,
-                                     cookie=COOKIE)
+                                     on_close=on_close)
     threading.Timer(interval=5, function=ping, args=(ws_conn,)).start()
     ws_conn.run_forever()
 
