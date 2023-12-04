@@ -23,6 +23,7 @@ HOST_NAME = os.getenv("BX_API_HOSTNAME")
 SECRET_KEY = bytes(os.getenv("BX_SECRET_KEY"), 'utf-8')
 JWT_TOKEN = os.getenv("BX_JWT")
 TRADING_ACCOUNT_ID = os.getenv("BX_TRADING_ACCOUNT_ID")
+RATELIMIT_TOKEN = os.getenv("BX_RATELIMIT_TOKEN")
 URI = "/trading-api/v2/orders"
 
 session = requests.Session()
@@ -55,6 +56,7 @@ headers = {
     "BX-SIGNATURE": signature,
     "BX-TIMESTAMP": timestamp,
     "BX-NONCE": next_nonce,
+    "BX-RATELIMIT-TOKEN": f"{RATELIMIT_TOKEN}"
 }
 
 response = session.post(

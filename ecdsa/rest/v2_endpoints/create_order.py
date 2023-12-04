@@ -25,6 +25,7 @@ logging.basicConfig(level=logging.INFO,
 HOST_NAME = os.getenv("BX_API_HOSTNAME")
 JWT_TOKEN = os.getenv("BX_JWT")
 TRADING_ACCOUNT_ID = os.getenv("BX_TRADING_ACCOUNT_ID")
+RATELIMIT_TOKEN = os.getenv("BX_RATELIMIT_TOKEN")
 URI = "/trading-api/v2/orders"
 
 private_key_pem = """
@@ -66,6 +67,7 @@ headers = {
     "BX-SIGNATURE": signature,
     "BX-TIMESTAMP": timestamp,
     "BX-NONCE": next_nonce,
+    "BX-RATELIMIT-TOKEN": f"{RATELIMIT_TOKEN}"
 }
 
 response = session.post(
