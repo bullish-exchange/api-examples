@@ -25,7 +25,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-public class ECDSALoginAndCreateOrderV2SigningSample {
+public class ECDSALoginAndCreateOrderV2SigningExample {
 
     private static final String BULLISH_HOST_NAME = "https://api.exchange.bullish.com";
 
@@ -68,10 +68,10 @@ public class ECDSALoginAndCreateOrderV2SigningSample {
         System.out.println("Using tradingAccountId: " + tradingAccountId);
 
         // Construct and sign the Create Order Request
-        final BigInteger epoch_milli = BigInteger.valueOf(Instant.now().getEpochSecond()).multiply(BigInteger.valueOf(1000));
-        final BigInteger next_once = BigInteger.valueOf(Instant.now().getEpochSecond()).multiply(BigInteger.valueOf(1000000));
+        final BigInteger epochMilli = BigInteger.valueOf(Instant.now().toEpochMilli());
+        final BigInteger nextNonce = BigInteger.valueOf(Instant.now().toEpochMilli()).multiply(BigInteger.valueOf(1000));
 
-        final String create_order_url_path = "/trading-api/v2/orders";
+        final String createOrderUrlPath = "/trading-api/v2/orders";
 
         final CreateOrderRequest createOrderRequest = CreateOrderRequest.builder()
                 .symbol("BTCUSDC")
@@ -81,17 +81,17 @@ public class ECDSALoginAndCreateOrderV2SigningSample {
                 .price("1.5000") // Demo only. This is not likely to fill
                 .quantity("1.0")
                 .timeInForce("GTC")
-                .clientOrderId(next_once.toString())
+                .clientOrderId(nextNonce.toString())
                 .tradingAccountId(tradingAccountId)
                 .build();
 
         final String bodyString = objectMapper.writeValueAsString(createOrderRequest);
 
         // Construct the signing payload
-        final String payLoadToSign = epoch_milli.toString()
-                + next_once.toString()
+        final String payLoadToSign = epochMilli.toString()
+                + nextNonce.toString()
                 + "POST"
-                + create_order_url_path
+                + createOrderUrlPath
                 + bodyString;
 
         // Sign and encode the resultant bytes in BASE64
@@ -103,13 +103,13 @@ public class ECDSALoginAndCreateOrderV2SigningSample {
         // Send signature along, in the request
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(BULLISH_HOST_NAME + create_order_url_path))
+                .uri(URI.create(BULLISH_HOST_NAME + createOrderUrlPath))
                 .POST(HttpRequest.BodyPublishers.ofString(bodyString))
                 .header("Content-type", "application/json")
                 .header("Authorization", "Bearer " + loginResponse.getToken())
                 .header("BX-SIGNATURE", signature_base64)
-                .header("BX-TIMESTAMP", epoch_milli.toString())
-                .header("BX-NONCE", next_once.toString())
+                .header("BX-TIMESTAMP", epochMilli.toString())
+                .header("BX-NONCE", nextNonce.toString())
                 .build();
 
         var response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -263,5 +263,4 @@ public class ECDSALoginAndCreateOrderV2SigningSample {
         private String clientOrderId;
         private String tradingAccountId;
     }
-
 }
