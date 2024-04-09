@@ -2,7 +2,7 @@
 Bullish API Examples
 ===================
 
-This repository contain code examples to help developers get started with using the [Bullish cryptocurrency exchange](https://exchange.bullish.com/), via a programmatic interface.
+This repository contains code examples to help developers get started with using the [Bullish cryptocurrency exchange](https://exchange.bullish.com/), via a programmatic interface.
 
 Examples are based on the Bullish API documentation at https://api.exchange.bullish.com/docs/api/rest/#overview 
 
@@ -36,8 +36,8 @@ pprint.pp(markets) #pretty print
 
 ### Prerequisite to using private APIs - the JWT token
 Important details about [how to start sending authenticated requests here](https://api.exchange.bullish.com/docs/api/rest/trading-api/v2/#overview--how-to-send-authenticated-requests). Some sample code on how to actually generate a JWT token:
-- ECDSA example: [generate_jwt_v2.py](generate_jwt_v2.py)
-- HMAC example: [generate_jwt_hmac.py](generate_jwt_hmac.py)
+- ECDSA example: [generate_jwt_v2.py](ecdsa/rest/generate_jwt.py)
+- HMAC example: [generate_jwt_hmac.py](/hmac/rest/generate_jwt.py)
 
 ### Example private API call - getting trading account ID(s)
 Once you fetched your JWT Token successfully, you can fetch your trading account IDs via an authenticated request. For example:
@@ -112,7 +112,7 @@ Following which, we install the dependencies in [requirements.txt](requirements.
 ```bash
 pip3 install -r requirements.txt
 ```
-In order to actually run the samples that involve calling private APIs, __credentials such as API keys and secrets need to be provided__. Our samples read these from the [.env file](.env) which look like:
+In order to actually run the samples that involve calling private APIs, __credentials such as API keys and secrets need to be provided__. Our samples read these from the [.env file](.env) which looks like:
 ````
 export BX_API_HOSTNAME=https://api.exchange.bullish.com
 export BX_WS_API_HOSTNAME=wss://api.exchange.bullish.com
@@ -127,4 +127,4 @@ Next steps
 -----
 Explore other functionality of the [Bullish API](https://api.exchange.bullish.com/docs/api/rest/#overview) via sample code, for example:
 - Web socket to [get L2 Order Book](l2_orderbook_web_socket.py) 
-- [Create AMM instructions](create_amm_instruction_v2_hmac.py)
+- [Create AMM instructions](/hmac/rest/create_amm_instruction_v2.py)
