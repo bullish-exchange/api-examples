@@ -37,7 +37,7 @@ pprint.pp(markets) #pretty print
 ### Prerequisite to using private APIs - the JWT token
 Important details about [how to start sending authenticated requests here](https://api.exchange.bullish.com/docs/api/rest/trading-api/v2/#overview--how-to-send-authenticated-requests). Some sample code on how to actually generate a JWT token:
 - ECDSA example: [generate_jwt_v2.py](ecdsa/rest/generate_jwt.py)
-- HMAC example: [generate_jwt_hmac.py](/hmac/rest/generate_jwt.py)
+- HMAC example: [generate_jwt_hmac.py](hmac/rest/generate_jwt.py)
 
 ### Example private API call - getting trading account ID(s)
 Once you fetched your JWT Token successfully, you can fetch your trading account IDs via an authenticated request. For example:
@@ -57,7 +57,7 @@ pprint.pp(accounts)
 ```
 
 ### Signature required - creating a limit order
-Signing of requests is done differently for HMAC and ECDSA. An [ECDSA example can be found here](/ecdsa/rest/v2_endpoints/create_order.py), and a code snippet for HMAC is below. A [functional HMAC example can be found here](create_order_hmac_v2.py).
+Signing of requests is done differently for HMAC and ECDSA. An [ECDSA example can be found here](ecdsa/rest/v2_endpoints/create_order.py), and a code snippet for HMAC is below. A [functional HMAC example can be found here](create_order_hmac_v2.py).
 ```python
 JWT_TOKEN = #Your JWT Token here
 TRADING_ACCOUNT_ID = # Your trading account id here
@@ -127,4 +127,4 @@ Next steps
 -----
 Explore other functionality of the [Bullish API](https://api.exchange.bullish.com/docs/api/rest/#overview) via sample code, for example:
 - Web socket to [get L2 Order Book](l2_orderbook_web_socket.py) 
-- [Create AMM instructions](/hmac/rest/create_amm_instruction_v2.py)
+- [Create AMM instructions](hmac/rest/create_amm_instruction_v2.py)
