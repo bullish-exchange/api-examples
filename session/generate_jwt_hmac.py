@@ -10,7 +10,7 @@ PUBLIC_KEY = os.getenv("BX_PUBLIC_KEY")
 SECRET_KEY = bytes(os.getenv("BX_SECRET_KEY"), 'utf-8')
 
 session = requests.Session()
-nonce = str(1234567890)
+nonce = int(datetime.now(timezone.utc).timestamp())
 ts = str(int(datetime.now(timezone.utc).timestamp() * 1000))
 path = "/trading-api/v1/users/hmac/login"
 message = ts + nonce + "GET" + "/trading-api/v1/users/hmac/login"
