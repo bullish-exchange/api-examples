@@ -126,5 +126,4 @@ export BX_TRADING_ACCOUNT_ID=< your credential >
 Next steps
 -----
 Explore other functionality of the [Bullish API](https://api.exchange.bullish.com/docs/api/rest/#overview) via sample code, for example:
-- Web socket to [get L2 Order Book](websocket/l2_orderbook_web_socket.py) 
-- [Create AMM instructions](amm/create_amm_instruction_hmac.py)
+- Web socket for [Order Books](websocket/multi_orderbook_web_socket.py) 
