@@ -9,12 +9,13 @@ HOST_NAME = os.getenv("BX_API_HOSTNAME")
 SECRET_KEY = bytes(os.getenv("BX_SECRET_KEY"), 'utf-8')
 JWT_TOKEN = os.getenv("BX_JWT")
 AUTHORIZER = os.getenv("BX_AUTHORIZER")
+TRADING_ACCOUNT_ID = os.getenv("BX_TRADING_ACCOUNT_ID")
 
 ORDER_ID = "399014193334321153"
 SYMBOL = "BTCUSD"
 session = requests.Session()
 
-response = session.get(HOST_NAME + "/trading-api/v1/nonce")
+response = session.get(HOST_NAME + "/trading-api/v1/nonce", verify=False)
 nonce = json.loads(response.text)["lowerBound"]
 next_nonce = str(nonce + 1)
 timestamp = str(int(datetime.now(timezone.utc).timestamp() * 1000))
@@ -24,10 +25,11 @@ body = {
     "nonce": next_nonce,
     "authorizer": AUTHORIZER,
     "command": {
-        "commandType": "V1CancelOrder",
+        "commandType": "V2CancelOrder",
         "orderId": ORDER_ID,
         "handle": None,
         "symbol": SYMBOL,
+        "tradingAccountId": TRADING_ACCOUNT_ID,
     },
 }
 
@@ -47,7 +49,8 @@ response = session.delete(
     HOST_NAME
     + "/trading-api/v1/orders"
     + f"?orderId={ORDER_ID}"
-    + f"&symbol={SYMBOL}",
+    + f"&symbol={SYMBOL}"
+    + f"&tradingAccountId={TRADING_ACCOUNT_ID}",
     headers=headers,
 )
 print(f"HTTP Status: {response.status_code}, \n{response.text}")
