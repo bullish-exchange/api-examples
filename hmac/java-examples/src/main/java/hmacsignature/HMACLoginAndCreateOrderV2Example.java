@@ -70,9 +70,7 @@ public class HMACLoginAndCreateOrderV2Example {
                 + "POST"
                 + createOrderUrlPath
                 + bodyString;
-
-        // Get the signature
-        final String signature_for_order = getSignatureForOrder(payLoadToSign);
+        String signature_base64 = getSignatureForOrder(payLoadToSign);
 
         // Send signature along, in the request
         HttpClient client = HttpClient.newHttpClient();
@@ -81,7 +79,7 @@ public class HMACLoginAndCreateOrderV2Example {
                 .POST(HttpRequest.BodyPublishers.ofString(bodyString))
                 .header("Content-type", "application/json")
                 .header("Authorization", "Bearer " + loginResponse.getToken())
-                .header("BX-SIGNATURE", signature_for_order)
+                .header("BX-SIGNATURE", signature_base64)
                 .header("BX-NONCE", nano.toString())
                 .header("BX-TIMESTAMP", nonce.toString())
                 .build();
@@ -163,29 +161,6 @@ public class HMACLoginAndCreateOrderV2Example {
     private static String getSignatureForOrder(String toSign) throws Exception {
         final String digest = Hashing.sha256().hashString(toSign, StandardCharsets.UTF_8).toString();
         return hmacSha256(BULLISH_HMAC_PRIVATE_KEY.getBytes(StandardCharsets.UTF_8)).hashString(digest, StandardCharsets.UTF_8).toString();
-    }
-
-
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Data
-    public static class LoginRequest {
-        private String userId;
-        private Long nonce;
-        private Long expirationTime;
-        private Boolean biometricsUsed;
-        private String sessionKey;
-    }
-
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Data
-    public static class LoginPayload {
-        private String publicKey;
-        private String signature;
-        private LoginRequest loginPayload;
     }
 
     @Builder
