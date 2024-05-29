@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    implementation "org.bouncycastle:bcprov-jdk15to18:1.77"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.17.0"
+    implementation 'com.google.guava:guava:33.2.0-jre'
+}
