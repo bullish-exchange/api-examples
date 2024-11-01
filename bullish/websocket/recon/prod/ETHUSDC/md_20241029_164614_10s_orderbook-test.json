@@ -1,0 +1,495 @@
+[
+    {
+        "jsonrpc": "2.0",
+        "id": "1730191565878",
+        "result": {
+            "responseCode": 200,
+            "responseCodeName": "OK",
+            "message": "Successfully subscribed"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191565738",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191565924",
+            "datetime": "2024-10-29T08:46:05.738Z",
+            "sequenceNumberRange": [
+                611115702,
+                611115702
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191566141",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191566147",
+            "datetime": "2024-10-29T08:46:06.141Z",
+            "sequenceNumberRange": [
+                611115703,
+                611115703
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191566240",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191566248",
+            "datetime": "2024-10-29T08:46:06.240Z",
+            "sequenceNumberRange": [
+                611115704,
+                611115704
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191566743",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191566749",
+            "datetime": "2024-10-29T08:46:06.743Z",
+            "sequenceNumberRange": [
+                611115705,
+                611115705
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191567644",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191567650",
+            "datetime": "2024-10-29T08:46:07.644Z",
+            "sequenceNumberRange": [
+                611115706,
+                611115711
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191567745",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191567750",
+            "datetime": "2024-10-29T08:46:07.745Z",
+            "sequenceNumberRange": [
+                611115712,
+                611115713
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191568748",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191568753",
+            "datetime": "2024-10-29T08:46:08.748Z",
+            "sequenceNumberRange": [
+                611115714,
+                611115715
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191569246",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191569255",
+            "datetime": "2024-10-29T08:46:09.246Z",
+            "sequenceNumberRange": [
+                611115716,
+                611115717
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191569744",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191569755",
+            "datetime": "2024-10-29T08:46:09.744Z",
+            "sequenceNumberRange": [
+                611115718,
+                611115718
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191570351",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191570358",
+            "datetime": "2024-10-29T08:46:10.351Z",
+            "sequenceNumberRange": [
+                611115719,
+                611115723
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191570654",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191570658",
+            "datetime": "2024-10-29T08:46:10.654Z",
+            "sequenceNumberRange": [
+                611115724,
+                611115724
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191570753",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191570758",
+            "datetime": "2024-10-29T08:46:10.753Z",
+            "sequenceNumberRange": [
+                611115725,
+                611115725
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191570832",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191570859",
+            "datetime": "2024-10-29T08:46:10.832Z",
+            "sequenceNumberRange": [
+                611115726,
+                611115726
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191571455",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191571460",
+            "datetime": "2024-10-29T08:46:11.455Z",
+            "sequenceNumberRange": [
+                611115727,
+                611115729
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191571533",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191571560",
+            "datetime": "2024-10-29T08:46:11.533Z",
+            "sequenceNumberRange": [
+                611115730,
+                611115730
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191571746",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191571761",
+            "datetime": "2024-10-29T08:46:11.746Z",
+            "sequenceNumberRange": [
+                611115731,
+                611115732
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191572357",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191572362",
+            "datetime": "2024-10-29T08:46:12.357Z",
+            "sequenceNumberRange": [
+                611115733,
+                611115734
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191572756",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191572764",
+            "datetime": "2024-10-29T08:46:12.756Z",
+            "sequenceNumberRange": [
+                611115735,
+                611115738
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191572860",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191572864",
+            "datetime": "2024-10-29T08:46:12.860Z",
+            "sequenceNumberRange": [
+                611115739,
+                611115740
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191573764",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191573774",
+            "datetime": "2024-10-29T08:46:13.764Z",
+            "sequenceNumberRange": [
+                611115741,
+                611115741
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191573970",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191573975",
+            "datetime": "2024-10-29T08:46:13.970Z",
+            "sequenceNumberRange": [
+                611115742,
+                611115745
+            ],
+            "symbol": "ETHUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730191574071",
+            "bids": [
+                "2534650.0000",
+                "6.03400875"
+            ],
+            "asks": [
+                "0.9992",
+                "76060.94964024"
+            ],
+            "publishedAtTimestamp": "1730191574075",
+            "datetime": "2024-10-29T08:46:14.071Z",
+            "sequenceNumberRange": [
+                611115746,
+                611115746
+            ],
+            "symbol": "ETHUSDC"
+        }
+    }
+]

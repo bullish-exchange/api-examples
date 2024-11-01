@@ -1,0 +1,385 @@
+[
+    {
+        "jsonrpc": "2.0",
+        "id": "1730194122813",
+        "result": {
+            "responseCode": 200,
+            "responseCodeName": "OK",
+            "message": "Successfully subscribed"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194122661",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194122864",
+            "datetime": "2024-10-29T09:28:42.661Z",
+            "sequenceNumberRange": [
+                133255316,
+                133255316
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194122962",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194122971",
+            "datetime": "2024-10-29T09:28:42.962Z",
+            "sequenceNumberRange": [
+                133255317,
+                133255317
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194123266",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194123271",
+            "datetime": "2024-10-29T09:28:43.266Z",
+            "sequenceNumberRange": [
+                133255318,
+                133255319
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194123970",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194123974",
+            "datetime": "2024-10-29T09:28:43.970Z",
+            "sequenceNumberRange": [
+                133255320,
+                133255320
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194124971",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194124977",
+            "datetime": "2024-10-29T09:28:44.971Z",
+            "sequenceNumberRange": [
+                133255321,
+                133255321
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194125973",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194125980",
+            "datetime": "2024-10-29T09:28:45.973Z",
+            "sequenceNumberRange": [
+                133255322,
+                133255324
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194126965",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194126983",
+            "datetime": "2024-10-29T09:28:46.965Z",
+            "sequenceNumberRange": [
+                133255325,
+                133255325
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194127782",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194127787",
+            "datetime": "2024-10-29T09:28:47.782Z",
+            "sequenceNumberRange": [
+                133255326,
+                133255328
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194127881",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194127886",
+            "datetime": "2024-10-29T09:28:47.881Z",
+            "sequenceNumberRange": [
+                133255329,
+                133255329
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194127981",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194127986",
+            "datetime": "2024-10-29T09:28:47.981Z",
+            "sequenceNumberRange": [
+                133255330,
+                133255331
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194128678",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194128688",
+            "datetime": "2024-10-29T09:28:48.678Z",
+            "sequenceNumberRange": [
+                133255332,
+                133255332
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194128983",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194128989",
+            "datetime": "2024-10-29T09:28:48.983Z",
+            "sequenceNumberRange": [
+                133255333,
+                133255333
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194129181",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194129190",
+            "datetime": "2024-10-29T09:28:49.181Z",
+            "sequenceNumberRange": [
+                133255334,
+                133255335
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194129985",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194129992",
+            "datetime": "2024-10-29T09:28:49.985Z",
+            "sequenceNumberRange": [
+                133255336,
+                133255336
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194130992",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194130996",
+            "datetime": "2024-10-29T09:28:50.992Z",
+            "sequenceNumberRange": [
+                133255337,
+                133255337
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194131089",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194131096",
+            "datetime": "2024-10-29T09:28:51.089Z",
+            "sequenceNumberRange": [
+                133255338,
+                133255344
+            ],
+            "symbol": "SOLUSDC"
+        }
+    },
+    {
+        "type": "snapshot",
+        "dataType": "V1TALevel2",
+        "data": {
+            "timestamp": "1730194131281",
+            "bids": [
+                "2467.4600",
+                "4.2475327"
+            ],
+            "asks": [
+                "0.9993",
+                "24239.4087166"
+            ],
+            "publishedAtTimestamp": "1730194131298",
+            "datetime": "2024-10-29T09:28:51.281Z",
+            "sequenceNumberRange": [
+                133255345,
+                133255346
+            ],
+            "symbol": "SOLUSDC"
+        }
+    }
+]
