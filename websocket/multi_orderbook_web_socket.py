@@ -10,22 +10,47 @@ load_dotenv()
 
 HOST_NAME = os.getenv("BX_WS_API_HOSTNAME")
 
+## FOR EXAMPLE, WE ARE INTERESTED IN THE FOLLOWING ORDERBOOKS
+btcusdc_l1 = {
+    "topic": "l1Orderbook",
+    "symbol": "BTCUSDC"
+}
+
+btcusdc_l2 = {
+    "topic": "l2Orderbook",
+    "symbol": "BTCUSDC"
+}
+
+ethusdc_l2 = {
+    "topic": "l2Orderbook",
+    "symbol": "ETHUSDC"
+}
+
+SUPSCRIPTIONS = [btcusdc_l1, btcusdc_l2, ethusdc_l2]
+
+def on_open(conn):
+    time.sleep(1)
+    for sub in SUPSCRIPTIONS:
+        topic = sub["topic"]
+        symbol = sub["symbol"]
+
+        # We need to send a subscribe message to the websocket for each topic and symbol we want
+        subscribe_message = {
+            "jsonrpc": "2.0",
+            "type": "command",
+            "method": "subscribe",
+            "params": {
+                "topic": topic,
+                "symbol": symbol
+            },
+            "id": get_id()
+        }
+
+        print(f"Subscribing to topic:{topic} for symbol:{symbol}")
+        conn.send(json.dumps(subscribe_message))
 
 def get_id():
     return str(int(time.time() * 1000))
-
-
-def ping(conn):
-    ping_message = {
-        "jsonrpc": "2.0",
-        "type": "command",
-        "method": "keepalivePing",
-        "params": {},
-        "id": get_id()
-    }
-    conn.send(json.dumps(ping_message))
-    threading.Timer(interval=5, function=ping, args=(conn,)).start()
-
 
 def on_message(conn, message):
     print(f"Received message: {message}")
@@ -34,68 +59,8 @@ def on_message(conn, message):
 def on_error(conn, message):
     print(f"Received error: {message}")
 
-
 def on_close(conn, close_status_code, close_msg):
     print(f"Closed connection to {conn.url}. close_status_code={close_status_code}, close_msg={close_msg}")
-
-
-def on_open(conn):
-    time.sleep(1)
-    subscribe_message = {
-        "jsonrpc": "2.0",
-        "type": "command",
-        "method": "subscribe",
-        "params": {
-            "topic": "l1Orderbook",
-            "symbol": "BTCUSD"
-        },
-        "id": get_id()
-    }
-    conn.send(json.dumps(subscribe_message))
-    subscribe_message = {
-        "jsonrpc": "2.0",
-        "type": "command",
-        "method": "subscribe",
-        "params": {
-            "topic": "l1Orderbook",
-            "symbol": "ETHUSD"
-        },
-        "id": get_id()
-    }
-    conn.send(json.dumps(subscribe_message))
-    subscribe_message = {
-        "jsonrpc": "2.0",
-        "type": "command",
-        "method": "subscribe",
-        "params": {
-            "topic": "l2Orderbook",
-            "symbol": "BTCUSD"
-        },
-        "id": get_id()
-    }
-    conn.send(json.dumps(subscribe_message))
-    subscribe_message = {
-        "jsonrpc": "2.0",
-        "type": "command",
-        "method": "subscribe",
-        "params": {
-            "topic": "l2Orderbook",
-            "symbol": "ETHUSD"
-        },
-        "id": get_id()
-    }
-    conn.send(json.dumps(subscribe_message))
-    subscribe_message = {
-        "jsonrpc": "2.0",
-        "type": "command",
-        "method": "subscribe",
-        "params": {
-            "topic": "heartbeat"
-        },
-        "id": get_id()
-    }
-    conn.send(json.dumps(subscribe_message))
-
 
 def open_connection():
     ws_conn = websocket.WebSocketApp(HOST_NAME + "/trading-api/v1/market-data/orderbook",
@@ -103,7 +68,6 @@ def open_connection():
                                      on_message=on_message,
                                      on_error=on_error,
                                      on_close=on_close)
-    threading.Timer(interval=5, function=ping, args=(ws_conn,)).start()
     ws_conn.run_forever()
 
 
