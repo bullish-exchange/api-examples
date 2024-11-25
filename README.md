@@ -9,7 +9,7 @@ Examples are based on the Bullish API documentation at https://api.exchange.bull
 Getting started
 -------
 
-As with most of this code repository, code snippets below are written in Python 3. [Some Java examples](ecdsa/java-examples/src/main/java/) are also included.
+As with most of this code repository, code snippets below are written in Python 3. Some Java examples for [order creation](orders/java-examples/) and [withdrawal](custody/java-examples/) are also included.
 
 ## Connecting to the Bullish API
 For functionality offered via the [Bullish API](https://api.exchange.bullish.com/docs/api/rest/#overview) - some can be accessed publicly (without prior login), and some are private, where a login session is required.
@@ -36,8 +36,8 @@ pprint.pp(markets) #pretty print
 
 ### Prerequisite to using private APIs - the JWT token
 Important details about [how to start sending authenticated requests here](https://api.exchange.bullish.com/docs/api/rest/trading-api/v2/#overview--how-to-send-authenticated-requests). Some sample code on how to actually generate a JWT token:
-- ECDSA example: [generate_jwt_v2.py](ecdsa/rest/generate_jwt.py)
-- HMAC example: [generate_jwt_hmac.py](hmac/rest/generate_jwt.py)
+- ECDSA example: [generate_jwt_v2.py](session/generate_jwt_ecdsa.py)
+- HMAC example: [generate_jwt_hmac.py](session/generate_jwt_hmac.py)
 
 ### Example private API call - getting trading account ID(s)
 Once you fetched your JWT Token successfully, you can fetch your trading account IDs via an authenticated request. For example:
@@ -57,7 +57,7 @@ pprint.pp(accounts)
 ```
 
 ### Signature required - creating a limit order
-Signing of requests is done differently for HMAC and ECDSA. An [ECDSA example can be found here](ecdsa/rest/v2_endpoints/create_order.py), and a code snippet for HMAC is below. A [functional HMAC example can be found here](create_order_hmac_v2.py).
+Signing of requests is done differently for HMAC and ECDSA. An [ECDSA example can be found here](orders/create_order_ecdsa.py), and a code snippet for HMAC is below. A [functional HMAC example can be found here](orders/create_order_hmac.py).
 ```python
 JWT_TOKEN = #Your JWT Token here
 TRADING_ACCOUNT_ID = # Your trading account id here
@@ -126,5 +126,4 @@ export BX_TRADING_ACCOUNT_ID=< your credential >
 Next steps
 -----
 Explore other functionality of the [Bullish API](https://api.exchange.bullish.com/docs/api/rest/#overview) via sample code, for example:
-- Web socket to [get L2 Order Book](l2_orderbook_web_socket.py) 
-- [Create AMM instructions](hmac/rest/create_amm_instruction_v2.py)
+- Web socket for [Order Books](websocket/multi_orderbook_web_socket.py) 
