@@ -62,6 +62,7 @@ Signing of requests is done differently for HMAC and ECDSA. An [ECDSA example ca
 JWT_TOKEN = #Your JWT Token here
 TRADING_ACCOUNT_ID = # Your trading account id here
 SECRET_KEY = # Your HMAC secret key here
+HOST = "https://api.exchange.bullish.com"
 
 timestamp = str(int(datetime.now(timezone.utc).timestamp() * 1000))
 next_nonce = str(int(datetime.now(timezone.utc).timestamp() * 1_000_000))
@@ -78,7 +79,7 @@ body = {
     "clientOrderId": next_nonce,
     "tradingAccountId": TRADING_ACCOUNT_ID,
 }
-uri_path = "https://api.exchange.bullish.com/trading-api/v2/orders"
+uri_path = "/trading-api/v2/orders"
 body_string = json.dumps(body, separators=(",", ":"))
 payload = timestamp + next_nonce + "POST" + uri_path + body_string
 digest = sha256(payload.encode("utf-8")).hexdigest().encode('utf-8')
@@ -93,7 +94,7 @@ headers = {
 }
 
 response = session.post(
-    uri_path, data=body_string, headers=headers
+    HOST + uri_path, data=body_string, headers=headers
 )
 
 print(f"Response HTTP Status: {response.status_code}")
