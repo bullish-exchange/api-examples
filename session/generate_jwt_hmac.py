@@ -13,12 +13,12 @@ session = requests.Session()
 nonce = int(datetime.now(timezone.utc).timestamp())
 ts = str(int(datetime.now(timezone.utc).timestamp() * 1000))
 path = "/trading-api/v1/users/hmac/login"
-message = ts + nonce + "GET" + "/trading-api/v1/users/hmac/login"
+message = ts + str(nonce) + "GET" + "/trading-api/v1/users/hmac/login"
 signature = hmac.new(SECRET_KEY, message.encode("utf-8"), sha256).hexdigest()
 
 headers = {
     'BX-PUBLIC-KEY': PUBLIC_KEY,
-    'BX-NONCE': nonce,
+    'BX-NONCE': str(nonce),
     'BX-SIGNATURE': signature,
     'BX-TIMESTAMP': ts
 }
