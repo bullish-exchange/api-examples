@@ -45,6 +45,11 @@ body = {
             "side": "BUY",
             "price": "52669.3",
             "quantity": "0.25"
+        },{
+            "symbol": "BTC-USDC-20250523-95000-C",
+            "side": "BUY",
+            "price": "52669.3",
+            "quantity": "0.25"
         }
     ]
 }
