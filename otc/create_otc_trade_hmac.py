@@ -33,7 +33,7 @@ body = {
     "clientOtcTradeId": "20250519001",
     "tradingAccountId": TRADING_ACCOUNT_ID,
     "isTaker": False,
-    "memo": "create otc trade HMAC",
+    "remarks": "create otc trade HMAC",
     "trades": [
         {
             "symbol": "SOL-USDC-PERP",
@@ -55,7 +55,7 @@ body = {
 }
 
 body_string = json.dumps(body, separators=(",", ":"))
-# the extra replace() call is because memo field can contain spaces
+# the extra replace() call is because remarks field can contain spaces
 payload = (timestamp + next_nonce + "POST" + PATH + body_string.replace(" ", "")).encode("utf-8")
 digest = sha256(payload).hexdigest().encode('utf-8')
 signature = hmac.new(SECRET_KEY, digest, sha256).hexdigest()

@@ -38,7 +38,7 @@ body = {
     "clientOtcTradeId": "20250519002",
     "tradingAccountId": TRADING_ACCOUNT_ID,
     "isTaker": False,
-    "memo": "create otc trade ECDSA",
+    "remarks": "create otc trade ECDSA",
     "trades": [
         {
             "symbol": "SOL-USDC-PERP",
@@ -60,7 +60,7 @@ body = {
 }
 
 body_string = json.dumps(body, separators=(",", ":"))
-# the extra replace() call is because memo field can contain spaces
+# the extra replace() call is because remarks field can contain spaces
 payload = (timestamp + next_nonce + "POST" + PATH + body_string.replace(" ", "")).encode("utf-8")
 signature = PRIVATE_KEY.sign(payload, hashfunc=sha256, sigencode=sigencode_der)
 signature = base64.b64encode(signature).decode()
