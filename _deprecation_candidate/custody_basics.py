@@ -2,7 +2,7 @@
 The examples here demonstrate simple usage of the GET endpoints of Bullish Custody API offering
 
 This script only makes read only requests and can be safely run in it's entirety. It also assumes you have setup your
-environment variables as descried in README.md including generating a JWT token
+environment variables as described in README.md including generating a JWT token
 """
 import os
 import requests
