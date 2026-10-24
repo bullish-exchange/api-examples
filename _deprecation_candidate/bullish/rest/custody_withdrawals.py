@@ -4,7 +4,7 @@ The sample code here demonstrates how to perform a withdrawal using the Bullish 
 The calls here require an API key that has been created with 'Withdrawal' privileges and had the destination signed
 on the Bullish website.
 
-The script assumes you have setup your environment variables as descried in README.md including generating a JWT token
+The script assumes you have setup your environment variables as described in README.md including generating a JWT token
 
 WARNING: The script here will perform a full withdrawal providing a correct API key and destination are used, please
 be careful to avoid any accidental transactions.
@@ -79,7 +79,7 @@ Step 2: Request a challenge for your withdrawal requirements
 Submit the details of the withdrawal you wish to make and the Bullish API will return a challenge for signing
 
 The nonce is used to protect against replay attacks, it is not meant as a universal idempotency key for all withdrawals,
-change it for each withdrawal.withdrawal
+change it for each withdrawal.
 
 For a crypto withdrawal, use exactly the same process, but use for example
 
